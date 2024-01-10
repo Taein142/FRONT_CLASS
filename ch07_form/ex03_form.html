@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    사는지역:
+    <!-- 인천 선택시
+        city라는 파라미터 안에 
+        인천이라는 데이터가 입력되어 전달됨.
+        city = "Incheon"
+    -->
+    <select name="city">
+        <option value="">선택해주세요</option>
+        <option value="Incheon">인천</option>
+        <option value="seoul">서울</option>
+        <option value="Jeju">제주</option>
+    </select>
+    <br>
+    성별:
+    <!-- radio : 설문조사의 선택동그라미, 
+        여러개의 선택지 중 1개 선택
+        선택짇들의 name값이 같아야됨 -->
+    <!-- gender = "female" -->
+        남: <input type="radio" name="gender" value="male">
+        여: <input type="radio" name="gender" value="female">
+    <br>
+    좋아하는 프로그래밍 언어 <br>
+    <!-- 여러개 선택 가능
+        배열처럼 전달이 됨
+        type=["java", "Python", "kotlin"] -->
+    <input type="checkbox" name="type" value="java">Java
+    <input type="checkbox" name="type" value="Python">Python
+    <input type="checkbox" name="type" value="Javascript">Javascript
+    <input type="checkbox" name="type" value="C">C
+    <input type="checkbox" name="type" value="kotlin">kotlin
+</body>
+</html>
