@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        사용자로부터 입력받은 내용을 어딘가(서버)로 보낼 때 사용
+        action: 목적지(값을 받아주는 서버(벡엔드)의 주소)
+        method: 전송방식(http request method). 안쓰면 get
+            get: 입력값이 주소창에 노출(주로 검색어)
+            post:입력값이 노출되지 않음 (회원가입, 로그인 정보 등)
+        input 태그 name 속성: 입력값을 담아주는 변수이름의 역할
+     -->
+     <!-- form action="n"의 n값은 보내고자 하는 목적지 -->
+     <form action="/member-login" method="post">
+        <label for="email">E-mail</label>
+        <input type="text" id="email" name="email" placeholder="이메일을 입력해주세요"> <br>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요"> <br>
+        <!-- submit -->
+        <input type="submit" value="login">
+        <!-- file:///C:/member-login?email=123123&password=123123 -->
+
+     </form>
+</body>
+</html>
