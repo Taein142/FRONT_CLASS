@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script></script>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log("hello javascript!!");
+    console.log('hello javascript!!');
+    console.log('hello javascript!!')
+    // 변수 선언
+    var num1 = 10;
+    console.log(num1);
+    let num2 = 100;
+    console.log(num2);
+    let str1 = "안녕하세요";
+    console.log(str1);
+    console.log("str1", str1);
+    let bool1 = true;
+    console.log(bool1);
+    console.log(`bool1: ${bool1}`);
+    console.log(typeof bool1); // boolean
+    bool1 = "오늘은 수요일";
+    console.log(`bool1: ${bool1}`);
+    console.log(typeof bool1); //String
+
+    const var1 = 100;
+    // var1=200; // const는 java에서 final과 비슷. 변경불가.
+
+    const var2=10;
+    const var3="10";
+    // ==: 값이 같은지 비교(필요시 알아서 형변환하고 값을 비교함)
+    // ===: 값, 타입이 모두 같은지 비교
+    if(var2==var3){
+        console.log("둘이 같아요");
+    }else{
+        console.log("둘이 달라요");
+    }
+    if(var2===var3){
+        console.log("둘이 같아요");
+    }else{
+        console.log("둘이 달라요");
+    }
+
+    let arr1 = [1, 10, 100, 1000];
+    console.log(arr1.length);
+    // for문으로 배열에 담긴 값 출력
+    for(let i=0; i<arr1.length; i++){
+        console.log(arr1[i]);
+    }
+    let arr2 = [10, "안녕", true, 0.1234, "ㅎㅎㅎ"];
+    for(let i=0; i<arr1.length; i++){
+        console.log(arr2[i]);
+    }
+
+</script>
+</html>
