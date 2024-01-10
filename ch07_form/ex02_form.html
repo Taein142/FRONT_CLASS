@@ -14,16 +14,17 @@
             post:입력값이 노출되지 않음 (회원가입, 로그인 정보 등)
         input 태그 name 속성: 입력값을 담아주는 변수이름의 역할
      -->
+     <!-- file:///C:/member-login?email=123123&password=123123 -->
      <!-- form action="n"의 n값은 보내고자 하는 목적지 -->
      <form action="/member-login" method="post">
         <label for="email">E-mail</label>
         <input type="text" id="email" name="email" placeholder="이메일을 입력해주세요"> <br>
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요"> <br>
-        <!-- submit -->
+        <!-- submit : 전송의 역할 -->
         <input type="submit" value="login">
-        <!-- file:///C:/member-login?email=123123&password=123123 -->
-
+        <!-- form 태그 안에 작성한 button 태그는 전송(submit)의 역할을 함. -->
+        <button>버튼 login</button>
      </form>
 </body>
 </html>
