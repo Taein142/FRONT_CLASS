@@ -1,64 +1,58 @@
 <!DOCTYPE html>
 <html lang="kor">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-<script>
-    const book = {
-        name: "자바스크립트 기초",
-        publisher: '좋은 출판사',
-        author: "작가1",
-        price: 20000,
-        index: {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <script>
+        const book = {
+            name: "자바스크립트 기초",
+            publisher: '좋은 출판사',
+            author: "작가1",
+            price: 20000,
+            index: {
                 ch1: "소개",
                 ch2: "변수",
                 ch3: "연산자"
-        },
-        date: "2024년 1월"
-    }
-    console.log(book);
-    // 출판사 정보만 출력
-    console.log(book.publisher);
-    console.log(book.index.ch2);
-    console.log(typeof book);
-
-    const book1 = {
-        name: "자바스크립트 응용",
-        publisher: '좋은 출판사',
-        author: "작가2",
-        price: 25000,
-        index: {
+            },
+            date: "2024년 1월"
+        }
+        console.log(book);
+        // 출판사 정보만 출력
+        console.log(book.publisher);
+        console.log(book.index.ch2);
+        console.log(typeof book);
+        const book1 = {
+            name: "자바스크립트 응용",
+            publisher: '좋은 출판사',
+            author: "작가2",
+            price: 25000,
+            index: {
                 ch1: "소개",
                 ch2: "변수",
                 ch3: "연산자"
-        },
-        date: "2024년 1월"
-    }
-
-
-    const book2 = {
-        name: "자바 응용",
-        publisher: '좋은 출판사',
-        author: "작가3",
-        price: 50000,
-        index: {
+            },
+            date: "2024년 1월"
+        }
+        const book2 = {
+            name: "자바 응용",
+            publisher: '좋은 출판사',
+            author: "작가3",
+            price: 50000,
+            index: {
                 ch1: "소개",
                 ch2: "변수",
                 ch3: "연산자"
-        },
-        date: "2024년 1월"
-    }
-    const arr = [book, book1, book2];
-    console.log(arr);
-    for(let i=0; i<arr.length; i++){
-        console.log(arr[i]);
-        console.log(arr[i].name);
-        console.log(arr[i].index.ch1);
-    }
-</script>
+            },
+            date: "2024년 1월"
+        }
+        const arr = [book, book1, book2];
+        console.log(arr);
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+            console.log(arr[i].name);
+            console.log(arr[i].index.ch1);
+        }
+    </script>
 </html>
