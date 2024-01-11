@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #div1{
+            background-color: orange;
+        }
+        #div2{
+            background-color: dodgerblue;
+        }
+    </style>
 </head>
 <body>
     <h2>javascript events</h2>
     <button onclick="fun1()">fun1 함수</button>
     <button onclick="fun2('hello')">fun2 함수</button>
     <button onclick="fun3(this)">fun3 함수</button>
+
+    <div id ="div1" onmouseover="fun4()" onmouseout="fun5()"></div>
+    <div id ="div2" onmousedown="fun6()" onmouseup="fun7()"></div>
+
+    <input type="text" onkeydown="fun8()" placeholder="입력하시죠">
+    <input type="text" onkeyup="fun9()" placeholder="입력하시죠">
+    <input type="text" onblur="fun10()" placeholder="입력하시죠">
+
+
 </body>
 <script>
     const fun1 = () => {
@@ -20,6 +41,27 @@
     }
     const fun3 = (ele1) => {
         console.log(ele1)
+    }
+    const fun4 = () => {
+        console.log("들어왔다");
+    }
+    const fun5 = () => {
+        console.log("나갔다");
+    }
+    const fun6 = () => {
+        console.log("눌렀다");
+    }
+    const fun7 = () => {
+        console.log("뗐다");
+    }
+    const fun8 = () => {
+        console.log("키보드를 눌렀다");
+    }
+    const fun9 = () => {
+        console.log("키보드에서 손을 뗐다");
+    }
+    const fun10 = () => {
+        console.log("절 떠나셨네요");
     }
 </script>
 </html>
