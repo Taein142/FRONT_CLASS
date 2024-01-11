@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>javascript 함수</h2>
+    <!-- onclick이라고 작성한 요소에 
+        클릭 이벤트가 발생했을 때 호출할 함수 -->
+    <button onclick="fun1()">fun1 함수 호출</button>
+    <button onclick="fun2()">fun2 함수 호출</button>
+    <button onclick="fun3()">alert 함수 호출</button>
+    <button onclick="fun4()">confirm 함수 호출</button>
+    <button onclick="fun5()">prompt 함수 호출</button>
+</body>
+<script>
+// fun1();
+    function fun1(){
+        console.log("fun1 함수 호출")
+    }
+    const fun2 = () => {
+        console.log("fun2 함수 호출");
+    }
+    const fun3 = () => {
+        let var1 = "alert 입니다.";
+        // alert("alert 입니다.")
+        alert(var1);
+    }
+    const fun4 = () => {
+        // confirm 함수는 
+        // 확인을 눌렀을 때는 true, 
+        // 취소를 눌렀을 때는 false 를 돌려줌
+        let result = confirm("선택해주세요")
+        console.log(result);
+        if(result){
+            console.log("확인클릭");
+        }else{
+            console.log("취소클릭");
+        }
+    }
+    const fun5 = () => {
+        let value = prompt("입력해보세요");
+        console.log(value);
+    }
+</script>
+</html>

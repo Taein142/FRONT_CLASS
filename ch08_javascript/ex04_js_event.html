@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>javascript events</h2>
+    <button onclick="fun1()">fun1 함수</button>
+    <button onclick="fun2('hello')">fun2 함수</button>
+    <button onclick="fun3(this)">fun3 함수</button>
+</body>
+<script>
+    const fun1 = () => {
+        console.log("fun1 함수");
+    }
+    const fun2 = (param1) => {
+        console.log(param1)
+    }
+    const fun3 = (ele1) => {
+        console.log(ele1)
+    }
+</script>
+</html>
