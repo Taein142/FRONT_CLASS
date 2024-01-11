@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../images/구글이미지.png" width="500" height="300" id="img1" alt="">
+    <button onclick="changeimg()">이미지 교체</button>
+</body>
+<script>
+    const changeimg = () => {
+        const img = document.getElementById("img1");
+        // img 태그의 scr 속성값 확인
+        console.log(img.src);
+        img.src = "../images/집에언제가.jpg";
+    }
+</script>
+</html>

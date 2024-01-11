@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="id1">
+        <p>
+            안녕하세요
+        </p>
+    </div>
+    <div id="id2">
+
+    </div>
+    <button onclick="fun1()">fun1함수</button>
+</body>
+<script>
+    const id1 = document.getElementById("id1");
+    console.log(id1.innerText);
+    console.log(id1.innerHTML);
+
+    const fun1 = () => {
+        const id2 = document.getElementById("id2");
+        let output = "<h2>이게 보일까</h2>";
+        id2.innerHTML = output;
+        // document.getElementById("id2").innerHTML = output;
+        // id2.innerText = output;
+    }
+</script>
+</html>
