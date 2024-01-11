@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>안녕하세요</h2>
+    <h2>반갑습니다</h2>
+    <h2>javascript</h2>
+    <h3>오늘은 목요일</h3>
+    <h3>hello</h3>
+    <h3>html, css, javascript 재밌다</h3>
+    <h4></h4>
+</body>
+<script>
+    console.log(document);
+    // document가 가르키는 것은 현재 문서 자체.
+    // 그래서 통상 document.???로 함.
+
+    console.log("-----------------")
+    // 현재 문서에 있는 모든 h2 요소
+    console.log(document.getElementsByTagName("h2"));
+    const h2All = document.getElementsByTagName("h2");
+    console.log(h2All.length);
+    console.log(h2All[0]);
+    console.log(h2All[0].innerText);
+    // innerText를 통해 안에 있는 텍스트만 볼 수 있다.
+
+    // 반복문으로 h2 태그의 innerText 출력
+    for(let i =0; i<h2All.length; i++){
+        console.log(h2All[i].innerText);
+    }
+
+    console.log("-----------------")
+    // querySelector();
+    // ()안에는 css 선택자 문법 사용
+    // 그냥 사용하면 첫번째 것만 가져옴.
+    // 다 가져오고 싶으면 querySelectorAll 사용해야 됨.
+    console.log(document.querySelector("h2")); 
+    console.log(document.querySelectorAll("h2")); 
+    for(let i =0; i<h2All.length; i++){
+        console.log(h2All[i].innerText);
+    }
+    console.log(document.querySelectorAll("h3"))
+
+    console.log("-----------------")
+    // h4 태그에 내용 추가하기
+    // h4 태그 가져오기
+    const h4 = document.querySelector("h4");
+    console.log(h4);
+    // h4에 innerText 값 주기
+    h4.innerText = "이 값이 보일까?";
+    document.querySelector("h4").innerText = "ㅎㅎㅎㅎ";
+
+</script>
+</html>
