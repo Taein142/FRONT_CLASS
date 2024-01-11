@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 onclick="fun1()" id="id1">오늘은 목요일</h2>
+</body>
+<script>
+    const fun1 = () => {
+        const ele = document.getElementById("id1");
+        // css 제어
+        ele.style.color = "yellow";
+        ele.style.backgroundColor = "black";
+    }
+</script>
+</html>

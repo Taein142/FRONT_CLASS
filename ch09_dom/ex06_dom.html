@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    입력1: <input type="text" id="id1" name="id1" onkeyup="fun1()"> <br>
+    입력2: <input type="text" id="id2" name="id2" onblur="fun2()"> <br>
+    <!-- 입력2에 값을 입력하고 아래 버튼을 클릭했을 때 
+        id=result로 지정한 p태그에 입력한 값을 출력해보기-->
+    <button onclick="fun3()">fun3함수</button>
+    입력값: <p id="result"></p>
+</body>
+<script>
+    // 여기에 입력한 값을 자바스크립트에서 사용하고자 함
+    const fun1 = () => {
+        const input1 = document.getElementById("id1");
+        console.log(input1.value);
+        const input2 = document.querySelector('input[name="id1"]');
+        console.log(input2.value);
+        const inputValue = document.getElementById("id1").value;
+        console.log(inputValue);
+    }
+    const fun2 = () => {
+        const input1 = document.getElementById("id2");
+        console.log(input1.value);
+    }
+    const fun3 = () => {
+        const value = document.getElementById("id2").value;
+        const p = document.getElementById("result");
+        p.innerText = value;
+    }
+</script>
+</html>

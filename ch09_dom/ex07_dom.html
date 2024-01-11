@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    number1: <input type="text" id="num1"> <br>
+    number2: <input type="text" id="num2"> <br>
+    <button onclick="cal()">계산</button> <br>
+    계산결과: <input type="text" id="result">
+</body>
+<script>
+    sum = 0 ;
+    const cal = () => {
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+        console.log(num1);
+        console.log(num2);
+        sum = Number(num1) + Number(num2);
+        console.log(sum);
+        const resultInput = document.getElementById("result");
+        resultInput.value = sum;
+
+        // 형변환 다른 방법
+        parseInt(num1);
+        console.log(parseInt(num1)+parseInt(num2));
+    }
+</script>
+</html>
