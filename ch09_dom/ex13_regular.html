@@ -9,6 +9,7 @@
     <h2>정규식(regular expressiont)</h2>
     <input type="text" id="text1" onblur="text1_check()"> <br>
     <input type="text" id="text2" onblur="text2_check()"> <br>
+    <!-- 영문소문자 필수 -->
     <input type="text" id="text3" onblur="text3_check()"> <br>
     <!-- 영문소문자, 숫자 필수 -->
     <input type="text" id="text4" onblur="text4_check()"> <br>
@@ -16,6 +17,8 @@
     <input type="text" id="text5" onblur="text5_check()"> <br>
     <!-- 영문대소문자, 숫자, 특수문자(-_!#) 필수 -->
     <input type="text" id="text6" onblur="text6_check()"> <br>
+    <!-- 전화번호형식(000-0000-0000) -->
+    <input type="text" id="text7" onblur="text7_check()"> <br>
 </body>
 <script>
     const text1_check = () => {
@@ -76,6 +79,16 @@
         console.log(text6);
         const exp = /^(?=.*[a-z])(?=.*[\d])(?=.*[A-Z])(?=.*[-_!#])[a-zA-Z-_!#\d]{8,16}$/;
         if(text6.match(exp)){
+            console.log("정규식 만족");
+        }else{
+            console.log("정규식 만족하지 않음.");
+        }
+    }
+    const text7_check = () => {
+        const text7 = document.querySelector("#text7").value;
+        console.log(text7);
+        const exp = /^\d{3}-\d{4}-\d{4}$/;
+        if(text7.match(exp)){
             console.log("정규식 만족");
         }else{
             console.log("정규식 만족하지 않음.");
