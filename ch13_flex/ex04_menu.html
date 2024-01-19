@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .menu{
+            display: flex;
+            align-items: center;
+            background-color: darkgray;
+        }
+        .menu-item{
+            list-style-type: none;
+            flex-grow: 1;
+        }
+        .menu-item a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        .menu-item:hover{
+            background-color: black;
+            text-decoration:line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="#">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Introduction</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Portfolio</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">ConTact Me</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
