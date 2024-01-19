@@ -17,19 +17,20 @@
 </body>
 <script>
     const email_check = () => {
-        const text = document.querySelector("#member-email").value;
-        console.log(text);
-        const exp = /^(?=.*[a-z])(?=.*[\d])[a-z\d]{8,16}$/
-        if(text.match(exp)){
-            console.log("정규식 만족");
-            document.getElementById("email-result").innerHTML = "규식씨 서비스 만족하고 집에 감";
+        const email = document.querySelector("#member-email").value;
+        const emailResult = document.getElementById("email-result");
+        const exp = /^(?=.*[a-z])(?=.*[\d])[a-z\d]{8,16}$/;
+        if(email.length==0){
+            emailResult.innerHTML = "필수입력입니다.";
+            emailResult.style.color = "red";
+        }else if(email.match(exp)){
+            emailResult.innerHTML = "규식씨 서비스 만족하고 집에 감";
+            emailResult.style.color = "green";
         }else{
-            console.log("정규식 만족하지 않음.");
-            document.getElementById("email-result").innerHTML = "규식씨 서비스 불만족하고 민원 넣음"
+            emailResult.innerHTML = "규식씨 서비스 불만족하고 민원 넣음";
+            emailResult.style.color = "red";
         }
     }
-    const memEmail = document.getElementById("member-email");
-    memEmail.addEventListener("blur", email_check);
-
+    document.getElementById("member-email").addEventListener("blur", email_check);
 </script>
 </html>
