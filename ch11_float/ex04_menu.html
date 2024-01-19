@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            height: 3000px;
+        }
+
+        #header{
+            position: sticky;
+            top: 0;
+        }
+        
         ul{
             list-style-type: none;
             /* 자식요소(li)에 float가 적용되면 부모(ul)의 높이가 사라지는 현상이 생김. 
@@ -12,9 +21,11 @@
             overflow: hidden;
             background-color: grey;
         }
+        
         li{
             float: left;
         }
+
         /* li태그에 속한 a 태그 */
         li a {
             /* 인라인, 블록 요소를 모두 가지고 있는 속성
@@ -31,6 +42,9 @@
             background-color: antiquewhite;
             color: black;
         }
+        .active{
+            background-color: black;
+        }
 
     </style>
 </head>
@@ -41,7 +55,7 @@
                 <a href="#">home</a>
             </li>
             <li>
-                <a href="#">Introduction</a>
+                <a href="#" class="active">Introduction</a>
             </li>
             <li>
                 <a href="#">Portfolio</a>
