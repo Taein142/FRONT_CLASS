@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        이메일입력 input
+        정규식: 소문자, 숫자 필수 8~16자 이내로
+        blur 이벤트를 이벤트 리스터로 적용하여 email_check 함수호출하고
+        아래에 정규식 만족 여부를 id="email-result"에 출력
+     -->
+     <input type="text" id="member-email" name="member-Email"> <br>
+     <h6 id="email-result"></h6>
+</body>
+<script>
+    const email_check = () => {
+        const text = document.querySelector("#member-email").value;
+        console.log(text);
+        const exp = /^(?=.*[a-z])(?=.*[\d])[a-z\d]{8,16}$/
+        if(text.match(exp)){
+            console.log("정규식 만족");
+            document.getElementById("email-result").innerHTML = "규식씨 서비스 만족하고 집에 감";
+        }else{
+            console.log("정규식 만족하지 않음.");
+            document.getElementById("email-result").innerHTML = "규식씨 서비스 불만족하고 민원 넣음"
+        }
+    }
+    const memEmail = document.getElementById("member-email");
+    memEmail.addEventListener("blur", email_check);
+
+</script>
+</html>
