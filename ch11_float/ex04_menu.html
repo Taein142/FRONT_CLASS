@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            /* 자식요소(li)에 float가 적용되면 부모(ul)의 높이가 사라지는 현상이 생김. 
+            부모 높이를 사용하려면 아래와 가팅 속성을 줌. */
+            overflow: hidden;
+            background-color: grey;
+        }
+        li{
+            float: left;
+        }
+        /* li태그에 속한 a 태그 */
+        li a {
+            /* 인라인, 블록 요소를 모두 가지고 있는 속성
+                높이, 너비를 지정할 수 있음. */
+            display: inline-block;
+            padding: 15px;
+            /* 밑줄 없앰 */
+            text-decoration: none;
+            color: white;
+        }
+
+        /* li 태그에 속한 a 태그에 마우스를 올리면 */
+        li a:hover{
+            background-color: antiquewhite;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <ul>
+            <li>
+                <a href="#">home</a>
+            </li>
+            <li>
+                <a href="#">Introduction</a>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact Me</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        #container1{
+            border: 1px solid red;
+        }
+        #container2{
+            border: 1px solid green;
+        }
+        #container3{
+            border: 1px solid blue;
+        }
+        #container4{
+            border: 1px solid orangered;
+        }
+        /* float 속성 해제 */
+        .sec1::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <div class="sec1">
+        <div id="container1"></div>
+        <div id="container2"></div>
+    </div>
+    <div class="sec2">
+        <div id="container3"></div>
+        <div id="container4"></div>
+    </div>
+</body>
+</html>
