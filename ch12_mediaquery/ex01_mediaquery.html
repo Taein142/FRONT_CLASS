@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container1{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        /* 브라우저 폭이 900px 이하인 경우 적용할 css */
+        @media(max-width:900px){
+            .container1{
+                background-color: coral;
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media(max-width:500px){
+            .container1{
+                background-color: darkorchid;
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>미디어 쿼리(media query)</h2>
+    <!-- 반응형 웹페이지(reponsive web) -->
+    <div class="container1">
+
+    </div>
+</body>
+<script>
+    
+</script>
+</html>
