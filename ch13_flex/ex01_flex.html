@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container1{
+            /* 자식요소를 가로로 배치하고자 할 때 부모요소에 적용 */
+            display: flex;
+            background-color: dodgerblue;
+        }
+        .container2{
+            display: flex;
+            background-color: darkred;
+            /* flex-direction: row; */
+            /* flex-direction: column; */
+            flex-direction: column-reverse;
+        }
+        /* flex-container 클래소그 적용된 요소에 소속된 div 태그*/
+        .flex-container div{
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>flex</h2>
+    <div class="container1 flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="container2 flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+</body>
+</html>
