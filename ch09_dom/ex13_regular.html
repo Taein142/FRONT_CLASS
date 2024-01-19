@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        
+    }
+</style>
+<body>
+    <h2>정규식(regular expressiont)</h2>
+    <input type="text" id="text1" onblur="text1_check()"> <br>
+    <input type="text" id="text2" onblur="text2_check()"> <br>
+    <input type="text" id="text3" onblur="text3_check()"> <br>
+    <!-- 영문소문자, 숫자 필수 -->
+    <input type="text" id="text4" onblur="text4_check()"> <br>
+    <!-- 영문대소문자,숫자 필수 -->
+    <input type="text" id="text5" onblur="text5_check()"> <br>
+    <!-- 영문대소문자, 숫자, 특수문자(-_!#) 필수 -->
+    <input type="text" id="text6" onblur="text6_check()"> <br>
+</body>
+<script>
+    const text1_check = () => {
+        const text1 = document.querySelector("#text1").value;
+        console.log(text1);
+        // 정규식 정의
+        const exp = /^[a-z]{5,10}$/;
+        if(text1.match(exp)){
+            console.log("정규식 만족");
+        }else{
+            console.log("정규식 만족하지 않음.");
+        }
+    }
+    const text2_check = () => {
+        const text2 = document.querySelector("#text2").value;
+        console.log(text2);
+        // \d가 숫자의미
+        const exp = /^[a-z\d]{8,16}$/;
+        if(text2.match(exp)){
+            console.log("정규식 만족");
+        }else{
+            console.log("정규식 만족하지 않음.");
+        }
+    }
+
+    const text3_check = () => {
+        const text3 = document.querySelector("#text3").value;
+        console.log(text3);
+        const exp = /^(?=.*[a-z])[a-z\d]{8,16}$/;
+        if(text3.match(exp)){
+            console.log("정규식 만족");
+        }else{
+            console.log("정규식 만족하지 않음.");
+        }
+    }
+    const text4_check = () => {
+        const text4 = document.querySelector("#text4").value;
+        console.log(text4);
+        const exp = /^(?=.*[a-z][\d])[a-z\d]{8,16}$/;
+        if(text4.match(exp)){
+            console.log("정규식 만족");
+        }else{
+            console.log("정규식 만족하지 않음.");
+        }
+    }
+    const text5_check = () => {
+        const text5 = document.querySelector("#text5").value;
+        console.log(text5);
+        const exp = /^(?=.*[a-z])(?=.*[\d])(?=.*[A-Z])[a-zA-Z\d]{8,16}$/;
+        if(text5.match(exp)){
+            console.log("정규식 만족");
+        }else{
+            console.log("정규식 만족하지 않음.");
+        }
+    }
+    const text6_check = () => {
+        const text6 = document.querySelector("#text6").value;
+        console.log(text6);
+        const exp = /^(?=.*[a-z])(?=.*[\d])(?=.*[A-Z])(?=.*[-_!#])[a-zA-Z-_!#\d]{8,16}$/;
+        if(text6.match(exp)){
+            console.log("정규식 만족");
+        }else{
+            console.log("정규식 만족하지 않음.");
+        }
+    }
+</script>
+</html>
