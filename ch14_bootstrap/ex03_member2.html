@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+
+        }
+        form{
+
+        }
+        /* SECTION - BIRTH */
+        .info#info__birth {
+            display: flex;
+        }
+
+        .info#info__birth select {
+             margin-left : 7px;
+        }
+
+        .info#info__birth select:first-child {
+             margin-left : 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="#" method="post" name="loginForm" onsubmit="return login_check()">
+        <div>
+            <input type="text" name="memberEmail" id="member-email" onblur="email_check()" placeholder="이메일"> <span>@</span>
+            <input type="text" name="emailDomain" id="email-domain" placeholder="도메인" onblur = "domain_check()">
+            <select id="domain-select" onchange="domain_select()">
+                <option value="">직접입력</option>
+                <option value="naver.com">네이버</option>
+                <option value="gmail.com">지메일</option>
+                <option value="hanmail.com">한메일</option>
+                <option value="daum.net">다음</option>
+           </select>
+        <h6 id="email-result"></h6> <h6 id="domain-result"></h6>
+        </div>
+        <div>
+            <input type="password" name="memberPass" id="member-pass" onblur="pass_check()" placeholder="비밀번호"> <br>
+            <h6 id="pass-result"></h6>
+        </div>
+        <div>
+            <input type="password" name="rePass" id="re-pass" onblur="re_pass_check()" placeholder="비밀번호 확인">
+            <h6 id="re-pass-result"></h6>
+        </div>
+        <div>
+            <input type="text" name="memberName" id="member-name" onblur="name_check()" placeholder="이름">
+            <h6 id="name-result"></h6>
+        </div>
+        <div>
+            <select class="box" id="birth-year">
+                <option disabled selected>출생 연도</option>
+              </select>
+              <select class="box" id="birth-month">
+                <option disabled selected>월</option>
+              </select>
+              <select class="box" id="birth-day">
+                <option disabled selected>일</option>
+              </select>
+        </div>
+        <div>
+            <input type="text" name="memberSex" id="member-sex" placeholder="성별">
+        </div>
+        <div>
+            <input type="text" name="memberNationality" id="member-nationality" placeholder="국적">
+        </div>
+        <div>
+            <select name="" id="">
+                <option value="SKT">SKT</option>
+                <option value="KT">KT</option>
+                <option value="LG">LG</option>
+            </select>
+            <input type="text" name="memberMobile" id="member-mobile" placeholder="전화번호">
+        </div>
+        <div><input type="submit" value="가입"></div>
+    </form>
+</body>
+<script>
+    // 도메인 입력 메서드
+    const domain_select = () => {
+        selectValue = document.getElementById("domain-select").value;
+        document.getElementById("email-domain").value = selectValue;
+    }
+
+    // 로그인 정보를 제대로 입력하였는지 확인하는 메서드
+    const login_check = () => {
+        let email = document.getElementById("member-email");
+        const pass = document.getElementById("member-pass");
+        if(!email_check(email.value)){
+            email.focus();
+            return false;
+        }else if(!pass_check(pass.value)){
+            pass.focus();
+            return false;
+        }
+    }
+
+    // 이메일을 제대로 입력했는지 확인하는 메서드
+    const email_check = () => {
+        const email = document.getElementById("member-email").value;
+        const emailResult = document.getElementById("email-result");
+        const exp = /^.{6,16}$/;
+        if (email.length == 0){
+            emailResult.innerHTML = "이메일을 입력해주세요.";
+            emailResult.style.color = "red";
+        }else if(email.match(exp)){
+            emailResult.innerHTML = "확인되었습니다.";
+            emailResult.style.color = "green";
+        }else{
+            emailResult.innerHTML = "6글자 이상, 16글자 이하로 작성해주세요";
+            emailResult.style.color = "red";
+        }
+    }
+
+    // 비밀번호를 제대로 입력했는지 확인하는 메서드
+    const pass_check = () => {
+        const pass = document.getElementById("member-pass").value;
+        const passResult = document.getElementById("pass-result");
+        const exp = /(?=.*[a-z])(?=.*[\d])(?=.*[!@#$%^&*])[a-z!@#$%^&*\d]{8,20}$/;
+        if (pass.length == 0){
+            passResult.innerHTML = "비밀번호를 입력해주세요.";
+            passResult.style.color = "red";
+        }else if(pass.match(exp)){
+            passResult.innerHTML = "확인되었습니다.";
+            passResult.style.color = "green";
+        }else {
+            passResult.innerHTML = 
+            "8글자 이상, 20글자 이하로 작성해주세요. 특수문자는 '!''@''#''$''%''^''&''*' 만 사용가능합니다.";
+            passResult.style.color = "red";
+        }
+    }
+
+    // 도메인 입력했는지 여부 확인 메서드
+    const domain_check = () => {
+        const domain = document.getElementById("email-domain").value;
+        const domainResult = document.getElementById("domain-result");
+        if(domain.length == 0){
+            domainResult.innerHTML = "도메인을 입력해주세요";
+            domainResult.style.color = "red";
+        }else{
+                domainResult.innerHTML = "";
+        }
+    }
+
+    // 비밀번호 재확인 메서드
+    const re_pass_check = () => {
+        const rePass = document.getElementById("re-pass").value;
+        const rePassResult = document.getElementById("re-pass-result");
+        const pass = document.getElementById("member-pass").value;
+        if (pass.length == 0){
+            rePassResult.innerHTML = "비밀번호를 입력해주세요";
+            rePassResult.style.color = "red";
+        }else if(rePass == pass){
+            rePassResult.innerHTML = "일치합니다.";
+            rePassResult.style.color = "green";
+        } else {
+            rePassResult.innerHTML = "비밀번호와 일치하지 않습니다.";
+            rePassResult.style.color = "red";
+        }
+
+    }
+
+    //이름 입력 여부 확인
+    const name_check = () => {
+        const name = document.getElementById("member-name").value;
+        const nameResult = document.getElementById("name-result");
+        if(name.length == 0){
+            nameResult.innerHTML = "이름을 입력해주세요.";
+            nameResult.style.color = "red";
+        }
+    }
+
+
+    // '출생 연도' 셀렉트 박스 option 목록 동적 생성
+    const birthYear = document.querySelector("#birth-year");
+    // option 목록 생성 여부 확인
+    isYearOptionExisted = false;
+    birthYear.addEventListener("focus", function () {
+    // year 목록 생성되지 않았을 때 (최초 클릭 시)
+        if(!isYearOptionExisted) {
+            isYearOptionExisted = true;
+            for(let i = 1960; i <= 2024; i++) {
+                // option element 생성
+                const YearOption = document.createElement("option");
+                YearOption.setAttribute("value", i);
+                YearOption.innerHTML = i;
+                // birthYear의 자식 요소로 추가
+                this.appendChild(YearOption);
+            }
+        }
+    });
+    
+    // '출생 월' 셀렉트 박스
+    const birthMonth = document.querySelector("#birth-month");
+    isMonthOptionExisted = false;
+    birthMonth.addEventListener("focus", function(){
+        if(!isMonthOptionExisted){
+            isMonthOptionExisted = true;
+            for(let i = 1; i<=12; i++){
+                const MonthOption = document.createElement("option");
+                MonthOption.setAttribute("value", i);
+                MonthOption.innerHTML = i;
+                this.appendChild(MonthOption);
+            }
+        }
+    });
+
+    // '출생 일' 셀렉트 박스
+    const birthDay = document.querySelector("#birth-day");
+    isDayOptionExsited = false;
+    birthDay.addEventListener("focus", function(){
+        if(!isDayOptionExsited){
+            isDayOptionExsited = true;
+            for(let i = 1; i<=31; i++){
+                const DayOption = document.createElement("option");
+                DayOption.setAttribute("value", i);
+                DayOption.innerHTML = i;
+                this.appendChild(DayOption);
+            }
+        }
+    });
+
+
+    
+    
+</script>
+</html>
