@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2>jQuery</h2>
+    <!-- javascript framework, library: react, vuew, node, express, ...
+        vanilla javascript -->
+    <h2 id="id1">안녕하세요</h2>
+    <h2 id="id2">
+        <span>오늘 한파</span>
+    </h2>
+    <h2 class="class1">영하 13도</h2>
+    <h3 class="class1">ㄷㄷㄷ</h3>
+    <h3 class="class1" class="class2">오늘은 화요일</h3>
+    <h4 id="id3" class="class2"></h4>
+    <button id="btn1">버튼1</button>
+    <button id="btn2" onclick="fun2()">버튼2</button>
+    <button id="btn3" onclick="hide()">사라져라</button>
+    <button id="btn4" onclick="show()">보여라</button>
+</body>
+<script>
+    let h2All = document.getElementsByTagName("h2");
+    h2All = document.querySelectorAll("h2");
+    // sQuery
+    h2All = $("h2");
+    let id1 = document.getElementById("id1");
+    id1 = document.querySelector("#id1");
+    id1 = $("#id1");
+
+    // id2가 적용된 요소의 innerHTML 출력
+    console.log(document.getElementById("id2").innerHTML);
+    console.log($("#id2").html());
+    console.log(document.getElementById("id2").innerText);
+    console.log($("#id2").text());
+    console.log(document.getElementsByClassName("class1"));
+    console.log($(".class1"));
+
+    // eventlistener를 활용하여 btn1을 클릭했을 때 fun1 함수 호출
+    const fun1 = () => {
+        console.log("fun1 함수 호출");
+        document.getElementById("id3").innerHTML = "<span>집에가고싶다.</span>"
+        // document.getElementById("id3").innerText = "<span>집에가고싶다.</span>"
+        // $("#id3").text("<span>진짜 집에가고 싶다.</span>");
+        $("#id3").html("<span>진짜 집에 가고 싶다.</span>");
+
+    }
+    // const btn1 = document.getElementById("btn1");
+    // btn1.addEventListener("click", fun1);
+    $("#btn1").click(fun1);
+
+    const fun2 = () => {
+        // class1이 적용된 요소의 글자색을 빨간색으로. jquery 이용
+        $(".class1").css("color", "red");
+        $(".class2").css("font-size", "50px");
+    }
+
+    const hide = () => {
+        // document.getElementById("id1").style.display = "none"
+        $("#id1").hide();
+    }
+    const show = () => {
+        // document.getElementById("id1").style.display = "block"
+        $("#id1").show();
+    }
+   
+
+
+
+</script>
+</html>
